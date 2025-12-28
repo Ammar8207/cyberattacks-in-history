@@ -1,0 +1,103 @@
+/*
+  Typography setup for a professional book feel.
+  - Headings: clean sans-serif (Inter)
+  - Body: readable serif (Source Serif Pro)
+  - Comfortable line height, narrower reading width for chapters
+  Fonts are delivered via Google Fonts.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap');
+
+:root {
+  /* Keep existing palette but define font tokens */
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --book-font-body: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  --book-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Dark mode palette remains readable */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Base typography */
+html, body {
+  font-family: var(--book-font-body);
+  line-height: 1.7; /* Comfortable for long reading */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings use the sans-serif for clear hierarchy */
+h1, h2, h3, h4, h5, h6,
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.theme-doc-markdown h4,
+.theme-doc-markdown h5,
+.theme-doc-markdown h6 {
+  font-family: var(--book-font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 1.25rem;
+}
+
+/* Moderate, non-oversized heading scales */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+/* Narrower reading width for docs content */
+.theme-doc-markdown {
+  max-width: 780px; /* Narrower column for book-like feel */
+  margin: 0 auto;
+}
+
+/* Improve paragraph rhythm */
+.theme-doc-markdown p {
+  margin: 0.75rem 0;
+  font-size: 1.02rem;
+}
+
+/* Lists spacing for readability */
+.theme-doc-markdown ul,
+.theme-doc-markdown ol {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Blockquote styling: subtle emphasis */
+.theme-doc-markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  color: var(--ifm-font-color-secondary);
+  background: rgba(46, 133, 85, 0.06);
+}
+
+/* Code blocks remain legible with serif body */
+.theme-code-block, pre code, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Tables: improve readability */
+.theme-doc-markdown table {
+  font-size: 0.98rem;
+}
